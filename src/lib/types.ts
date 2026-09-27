@@ -1,31 +1,19 @@
 interface Student {
-  studentId: string;
+  id: string;
   firstName: string;
   lastName: string;
-  program: "CPE" | "ISNE";
-  courses?: string[];
+  email: string;
+  status: "Active" | "Inactive";
+  enrolledCourses: string[];
 }
+
 export type { Student };
 
 interface Course {
-  courseId: string;
-  courseTitle: string;
-  instructors: string[];
+  courseCode: string;
+  title: string;
+  credits: number;
+  instructors?: string[];
 }
+
 export type { Course };
-
-interface Enrollment {
-  studentId: string;
-  courseId: string;
-  enrolledAt?: string; 
-}
-export type { Enrollment };
-
-interface User {
-  username: string;
-  password: string;
-  studentId?: string | null;
-  role: "STUDENT" | "ADMIN";
-  tokens?: string[];
-}
-export type { User };
